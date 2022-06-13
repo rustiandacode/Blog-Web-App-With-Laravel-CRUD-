@@ -19,7 +19,7 @@
               <a class="nav-link" href="/post">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/category">Categories</a>
+              <a class="nav-link" href="/categories">Categories</a>
             </li>
           </ul>
         </div>
