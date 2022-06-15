@@ -11,7 +11,8 @@ class UserController extends Controller
     {
         return view('posts', [
             'title' => 'Post by ' . $user->name,
-            'posts' => $user->post
+            'active' => 'Blog',
+            'posts' => $user->post->load(['category', 'user'])
         ]);
     }
 }

@@ -7,13 +7,15 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('home' , [
-        'title' => 'Home Page'
+        'title' => 'Home Page',
+        'active' => 'Home'
     ]);
 });
 
 Route::get('/about', function () {
     return view('about' , [
-        'title' => 'About Me'
+        'title' => 'About Me',
+        'active' => 'About'
     ]);
 });
 

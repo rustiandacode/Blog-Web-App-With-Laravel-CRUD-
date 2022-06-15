@@ -12,8 +12,9 @@ class CategoryController extends Controller
     {
         return view('categories', [
             'title' => 'Categories',
-            'categories' => Category::all(),
-            'users' => User::all()
+            'active' => 'Categories',
+            'categories' => Category::with(['post'])->get(),
+            'users' => User::with(['post'])->get()
         ]);
     }
 
@@ -21,6 +22,7 @@ class CategoryController extends Controller
     {
         return view('posts', [
             'title' => 'Categories',
+            'active' => 'Blog',
             'posts' => $category->post->load(['user','category'])
         ]);
     }

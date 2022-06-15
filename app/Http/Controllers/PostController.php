@@ -11,7 +11,8 @@ class PostController extends Controller
     {
         return view('posts', [
             'title' => 'Halaman Post',
-            'posts' => Post::all()
+            'active' => 'Blog',
+            'posts' => Post::with(['user', 'category'])->get()
         ]);
     }
     
@@ -19,7 +20,8 @@ class PostController extends Controller
     {
         return view('post', [
             'title' => $post->title,
-            'post' => $post
+            'active' => 'Blog',
+            'post' => $post->load(['user','category'])
         ]);
     }
     
