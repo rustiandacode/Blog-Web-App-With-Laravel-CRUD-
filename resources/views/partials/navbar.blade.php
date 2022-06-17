@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm p-3 mb-5">
+  <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm p-3 mb-3">
     <div class="container">
       <a class="navbar-brand" href="/">Myblog-app</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
             <a class="nav-link {{ ($active === "About") ? 'active' : '' }}" href="/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($active === "Blog") ? 'active' : '' }}" href="/post">Blog</a>
+            <a class="nav-link {{ ($active === "Blog") ? 'active' : '' }}" href="/posts">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ ($active === "Categories") ? 'active' : '' }}" href="/categories">Categories</a>

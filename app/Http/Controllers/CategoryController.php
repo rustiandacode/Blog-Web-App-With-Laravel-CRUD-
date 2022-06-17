@@ -17,13 +17,4 @@ class CategoryController extends Controller
             'users' => User::with(['post'])->get()
         ]);
     }
-
-    public function show(Category $category)
-    {
-        return view('posts', [
-            'title' => 'Categories',
-            'active' => 'Blog',
-            'posts' => $category->post->load(['user','category'])
-        ]);
-    }
 }

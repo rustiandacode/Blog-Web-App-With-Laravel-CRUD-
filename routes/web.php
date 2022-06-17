@@ -20,16 +20,10 @@ Route::get('/about', function () {
 });
 
 //halaman post
-Route::get('/post', [PostController::class , 'index']);
+Route::get('/posts', [PostController::class , 'index']);
 
 //halaman single post
 Route::get('/post/{post:slug}', [PostController::class , 'show']);
 
 //halaman category
 Route::get('/categories', [CategoryController::class , 'index']);
-
-//halaman detail category
-Route::get('/categories/{category:slug}', [CategoryController::class , 'show']);
-
-//halaman kategory berdasarkan user
-Route::get('/categories/user/{user:username}', [UserController::class , 'index']);

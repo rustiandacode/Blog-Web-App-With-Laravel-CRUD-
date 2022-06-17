@@ -10,7 +10,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ $category->name }}</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="/categories/{{ $category->slug }}" class="btn btn-primary">View</a>
+              <a href="/posts?category={{ $category->slug }}" class="btn btn-primary">View</a>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ $user->name }}</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="categories/user/{{ $user->username }}" class="btn btn-primary">View</a>
+              <a href="/posts?user={{ $user->username }}" class="btn btn-primary">View</a>
             </div>
         </div>
     </div>
