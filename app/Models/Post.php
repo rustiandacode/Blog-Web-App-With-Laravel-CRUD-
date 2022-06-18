@@ -23,15 +23,16 @@ class Post extends Model
 
         $query->when($filters['category'] ?? false, function($query, $category) {
             return $query->whereHas('category', function($query) use ($category) {
-                $query->where('slug', $category);
+                $query->where('slug', $category); 
             });
         });
-        
+
         $query->when($filters['user'] ?? false, function($query, $user) {
             return $query->whereHas('user', function($query) use ($user) {
                 $query->where('username', $user);
             });
         });
+        
     }
 
     public function category()
