@@ -30,7 +30,7 @@ class PostController extends Controller
             'posts' => Post::latest()->filter(request(['search', 'category', 'user']))->paginate(7)->withQueryString()
         ]);
     }
-    
+      
     public function show (Post $post)
     {
         return view('post', [
