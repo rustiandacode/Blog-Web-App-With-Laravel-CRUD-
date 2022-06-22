@@ -9,11 +9,10 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('register', [
+        return view('register.index', [
             'title' => 'Register Page',
-            'active' => 'Login'
         ]);
-    }
+    } 
     
     public function store(Request $request)
     {
@@ -28,7 +27,7 @@ class RegisterController extends Controller
 
         User::create($validatedData);
 
-        return redirect('/login');
+        return redirect('/login')->with('success', 'Your Registration Successfull!');
 
     }
 }

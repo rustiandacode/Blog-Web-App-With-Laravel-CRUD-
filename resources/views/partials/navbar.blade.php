@@ -7,23 +7,44 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link {{ ($active === "Home") ? 'active fw-bold' : '' }}" aria-current="page" href="/">Home</a>
+            <a class="nav-link {{ Request::is('/') ? 'active fw-bold' : '' }}" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($active === "About") ? 'active fw-bold' : '' }}" href="/about">About</a>
+            <a class="nav-link {{ Request::is('about') ? 'active fw-bold' : '' }}" href="/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($active === "Blog") ? 'active fw-bold' : '' }}" href="/posts">Blog</a>
+            <a class="nav-link {{ Request::is('posts') ? 'active fw-bold' : '' }}" href="/posts">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($active === "Categories") ? 'active fw-bold' : '' }}" href="/categories">Categories</a>
+            <a class="nav-link {{ Request::is('categories') ? 'active fw-bold' : '' }}" href="/categories">Categories</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
+        @auth
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome Back, {{ auth()->user()->name }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/dashboard"><i class="fa-solid fa-table-columns"></i> Dashboard</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <form action="/logout" method="post">
+              @csrf
+              <button type="submit" class="dropdown-item">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+              </button>
+              </form>
+            </li>
+          </ul>
+        </li>
+        @else
           <li class="nav-item">
-            <a class="nav-link {{ ($active === "Login") ? 'active fw-bold' : '' }}" href="/login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            <a class="nav-link {{ Request::is('login') ? 'active fw-bold' : '' }}" href="/login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
           </li>
-        </ul>
+        @endauth
+      </ul>
+        
       </div>
     </div>
   </nav>
