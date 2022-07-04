@@ -3,13 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $title }}</title>
+    <title>My Dashboard</title>
 
     {{-- Bootstrap css --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
+
+    {{-- Trix Editor --}}
+    <link rel="stylesheet" type="text/css" href="/css/trix.css">
+    <script type="text/javascript" src="/js/trix.js"></script>
+
+    <style>
+      trix-toolbar [data-trix-button-group ="file-tools"] {
+        display: none;
+      }
+    </style>
+
   </head>
   <body>
     

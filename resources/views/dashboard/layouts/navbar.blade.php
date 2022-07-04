@@ -2,13 +2,13 @@
     <div class="position-sticky pt-3">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard') ? 'active fw-bold' : '' }}" aria-current="page" href="/dashboard">
+          <a class="nav-link {{ Request::is('dashboard') ? 'active fw-bold' : '' }}" href="/dashboard">
             <span data-feather="home" class="align-text-bottom"></span>
             Dashboard
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/posts') ? 'active fw-bold' : '' }}" href="/dashboard/posts">
+          <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active fw-bold' : '' }}" href="/dashboard/posts">
             <span data-feather="file-text" class="align-text-bottom"></span>
             Posts
           </a>

@@ -30,10 +30,11 @@ Route::post('/register', [RegisterController::class , 'store']);
 Route::get('/dashboard', function()
 {
     return view('dashboard.index', [
-        'title' => 'dashboard',
+        'title' => 'dashboard'
     ]);
 })->middleware('auth');
 
+Route::get('/dashboard/posts/checkslug', [DashboardPostsController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostsController::class)->middleware('auth');
 
 Route::get('/posts', [PostController::class , 'index']);

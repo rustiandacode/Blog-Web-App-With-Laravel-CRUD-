@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
@@ -17,9 +16,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        
         Post::factory(49)->create();
-
+        
         User::factory(3)->create();
+        
+        User::create([
+            'name' => "Adzeni Rustianda",
+            'email' => 'rustiandazen09@gmail.com',
+            'password' => bcrypt('password'),
+            'username' => 'rustiandazen'
+        ]);
 
         Category::create([
             'name' => 'Programming',
