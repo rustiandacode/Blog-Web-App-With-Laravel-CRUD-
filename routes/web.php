@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DashboardPostsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
@@ -41,3 +42,5 @@ Route::get('/posts', [PostController::class , 'index']);
 Route::get('/post/{post:slug}', [PostController::class , 'show']);
 
 Route::get('/categories', [CategoryController::class , 'index']);
+
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show');
