@@ -43,4 +43,5 @@ Route::get('/post/{post:slug}', [PostController::class , 'show']);
 
 Route::get('/categories', [CategoryController::class , 'index']);
 
+Route::get('/dashboard/categories/checkslug', [AdminCategoryController::class, 'checkSlug']);
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show');

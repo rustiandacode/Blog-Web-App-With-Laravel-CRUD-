@@ -7,14 +7,13 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use App\Models\User;
 
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
      *
      * @return void
-     */
+     
     public function register()
     {
         //
@@ -28,8 +27,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-        Gate::define('admin', function(User $user) {
-            return $user->is_admin;
+        Gate::define('is_admin', function(User $user){
+            return $user->is_admin = true;
         });
     }
 }
